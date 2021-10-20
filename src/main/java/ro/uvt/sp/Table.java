@@ -1,6 +1,6 @@
 package ro.uvt.sp;
 
-public class Table implements Element {
+public class Table extends Element {
     private final String title;
 
     public Table(String title){

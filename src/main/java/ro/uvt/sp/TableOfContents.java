@@ -3,7 +3,7 @@ package ro.uvt.sp;
 import java.util.HashMap;
 import java.util.List;
 
-public class TableOfContents {
+public class TableOfContents extends Element{
     private final HashMap<Integer, Chapter> contents = new HashMap<>();
 
     public TableOfContents(List<Chapter> chapters){

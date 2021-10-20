@@ -5,9 +5,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Book {
+public class Book extends Element{
     private final Collection<Author> authors = new LinkedList<>();
     private final List<Chapter> chapters = new ArrayList<>();
+    private final List<Element> elements = new ArrayList<>();
     private final String title;
     private final TableOfContents contents;
 
@@ -28,6 +29,10 @@ public class Book {
         return authors;
     }
 
+    public void addContent(Element element){
+        elements.add(element);
+    }
+
     public int createChapter(String cTitle){
         Chapter chapter = new Chapter(cTitle);
         chapters.add(chapter);
@@ -42,15 +47,16 @@ public class Book {
 
     public void print(){
         System.out.println(this);
+
+        for(Element element: elements){
+            element.print();
+        }
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "authors=" + authors +
-                ", chapters=" + chapters +
-                ", title='" + title + '\'' +
-                ", contents=" + contents +
-                '}';
+                "title = " + title + '\n' +
+                "authors=" + authors + '\n';
     }
 }

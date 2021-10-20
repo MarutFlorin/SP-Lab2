@@ -1,10 +1,10 @@
 package ro.uvt.sp;
 
-public class Image implements Element {
-    private final String imageName;
+public class Image extends Element {
+    private final String url;
 
-    public Image(String imageName){
-        this.imageName = imageName;
+    public Image(String url){
+        this.url = url;
     }
 
     public void print(){
@@ -14,7 +14,7 @@ public class Image implements Element {
     @Override
     public String toString() {
         return "Image{" +
-                "imageName='" + imageName + '\'' +
+                "url='" + url + '\'' +
                 '}';
     }
 }
